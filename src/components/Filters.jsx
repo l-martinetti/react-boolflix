@@ -6,7 +6,7 @@ const SearchBar = () => {
 
     return (
         <div>
-            <form action='#' onSubmit={handleSearchSubmit}>
+            <form onSubmit={handleSearchSubmit}>
                 <input
                     type="text"
                     placeholder="Cerca il tuo film"

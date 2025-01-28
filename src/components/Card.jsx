@@ -1,8 +1,7 @@
-import { useGlobalContext } from "../contexts/GlobalContext"
 
-const Card = () => {
+const Card = (props) => {
 
-    const { films } = useGlobalContext();
+    const { films } = props.films;
 
     return (
         <>
