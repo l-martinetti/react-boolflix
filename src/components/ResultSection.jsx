@@ -3,12 +3,15 @@ import { useGlobalContext } from "../contexts/GlobalContext"
 
 const ResultSection = () => {
 
-    const { films } = useGlobalContext();
+    const { films, tvSeries } = useGlobalContext();
 
     return (
-        <div className="container card-wrapper">
-            <Card films={films} />
-        </div>
+        <>
+            <div>
+                <Card films={films} tvSeries={tvSeries} />
+            </div>
+        </>
+
     )
 }
 

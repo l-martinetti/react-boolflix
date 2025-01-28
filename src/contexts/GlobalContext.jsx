@@ -7,21 +7,32 @@ const GlobalContext = createContext();
 const GlobalProvider = ({ children }) => {
 
     const [films, setFilms] = useState([]);
+    const [tvSeries, setTvSeries] = useState([])
     const [inputSearch, setInputSearch] = useState('');
 
-    const queryUrl = `${import.meta.env.VITE_BASE_API_MOVIE_URL}&query=${inputSearch}`;
+    const queryUrlMovie = `${import.meta.env.VITE_BASE_API_MOVIE_URL}&query=${inputSearch}`;
+
+    const queryUrlTvSeries = `${import.meta.env.VITE_BASE_API_TV_SERIES_URL}&query=${inputSearch}`
 
     const handleSearchSubmit = (e) => {
         e.preventDefault()
 
-        axios.get(queryUrl)
+        axios.get(queryUrlMovie)
             .then(res => {
-
                 setFilms(res.data.results);
 
             })
             .catch(error => {
-                console.error('Error: ', err);
+                console.error('Error: ', error);
+            })
+
+        axios.get(queryUrlTvSeries)
+            .then(res => {
+                setTvSeries(res.data.results);
+
+            })
+            .catch(error => {
+                console.error('Error: ', error);
             })
     }
 
@@ -29,7 +40,8 @@ const GlobalProvider = ({ children }) => {
         handleSearchSubmit,
         films,
         inputSearch,
-        setInputSearch
+        setInputSearch,
+        tvSeries
     }
     return (
         <GlobalContext.Provider value={value}>
