@@ -1,8 +1,10 @@
-
+import ResultSection from './ResultSection'
 
 const Main = () => {
     return (
-        <main>Main</main>
+        <main>
+            <ResultSection />
+        </main>
     )
 }
 

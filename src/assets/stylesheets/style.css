@@ -8,6 +8,10 @@ body {
     background-color: lightgray;
 }
 
+.container {
+    margin: 0 60px;
+}
+
 /* Header */
 
 header {
@@ -16,9 +20,22 @@ header {
     padding-inline: 60px;
     padding-block: 30px;
     background-color: black;
+    margin-bottom: 40px;
 }
 
 header h1 {
     color: red;
     text-transform: uppercase;
+}
+
+/* Main */
+
+.card-wrapper {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: calc(100% / 6 - 20px);
 }
