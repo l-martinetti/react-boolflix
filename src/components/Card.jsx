@@ -17,7 +17,7 @@ const Card = (props) => {
 
     return (
         <>
-            <h2>Films</h2>
+            {films.length > 0 && <h2>Films</h2>}
             <div className="container card-wrapper">
                 {films.map(film => {
 
@@ -42,17 +42,17 @@ const Card = (props) => {
             </div>
 
 
-            <h2>Tv series</h2>
+            {tvSeries.length > 0 && <h2>Tv Series</h2>}
             <div className="container card-wrapper">
                 {tvSeries.map(serie => {
 
-                    const countryCode = languageToCountry[serie.original_language.toLowerCase()] || "GB";
+                    const countryCode = languageToCountry[serie.origin_country.join("").toLowerCase()] || "GB";
 
                     return (
                         <div key={serie.id} className="card">
                             <div>
-                                <h4>{serie.title}</h4>
-                                <p>{serie.original_title}</p>
+                                <h4>{serie.name}</h4>
+                                <p>{serie.original_name}</p>
                                 <img
                                     src={`https://flagsapi.com/${countryCode}/flat/64.png`}
                                     alt={serie.original_language}
