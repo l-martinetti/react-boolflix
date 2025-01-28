@@ -1,7 +1,6 @@
 import { GlobalProvider } from "./contexts/GlobalContext"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
-import DefaultLayout from "./layout/DefaultLayout"
 import HomePage from "./pages/HomePage"
 
 function App() {
@@ -11,9 +10,7 @@ function App() {
       <GlobalProvider>
         <BrowserRouter>
           <Routes>
-            <Route Component={DefaultLayout}>
-              <Route path="/" Component={HomePage} />
-            </Route>
+            <Route path="/" Component={HomePage} />
           </Routes>
         </BrowserRouter>
       </GlobalProvider>

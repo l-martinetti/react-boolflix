@@ -1,7 +1,11 @@
+import { SearchBar } from "./Filters"
 
 const Header = () => {
     return (
-        <div>IM header</div>
+        <header>
+            <h1>booflix</h1>
+            <div><SearchBar /></div>
+        </header>
     )
 }
 

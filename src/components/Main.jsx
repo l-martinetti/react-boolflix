@@ -2,7 +2,7 @@
 
 const Main = () => {
     return (
-        <div>Main</div>
+        <main>Main</main>
     )
 }
 
