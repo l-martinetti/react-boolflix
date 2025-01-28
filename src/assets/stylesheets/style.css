@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightgray;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 60px;
+    padding-block: 30px;
+    background-color: black;
+}
+
+header h1 {
+    color: red;
+    text-transform: uppercase;
+}
