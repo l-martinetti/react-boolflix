@@ -16,7 +16,9 @@ const GlobalProvider = ({ children }) => {
 
         axios.get(queryUrl)
             .then(res => {
+
                 setFilms(res.data.results);
+
             })
             .catch(error => {
                 console.error('Error: ', err);

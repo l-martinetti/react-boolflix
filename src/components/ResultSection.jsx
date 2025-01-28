@@ -7,7 +7,7 @@ const ResultSection = () => {
 
     return (
         <div className="container card-wrapper">
-            <Card films={{ films }} />
+            <Card films={films} />
         </div>
     )
 }
