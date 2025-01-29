@@ -10,13 +10,13 @@ const ResultSection = () => {
             {films.length > 0 && <h2>Films</h2>}
             <div className="container card-wrapper">
                 {films.map(item => (
-                    <Card key={films.id} films={item} />
+                    <Card key={item.id} films={item} />
                 ))}
             </div>
             {tvSeries.length > 0 && <h2>Tv Series</h2>}
             <div className="container card-wrapper">
                 {tvSeries.map(item => (
-                    <Card key={films.id} films={item} />
+                    <Card key={item.id} films={item} />
                 ))}
             </div>
         </section>

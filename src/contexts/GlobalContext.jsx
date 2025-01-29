@@ -14,6 +14,7 @@ const GlobalProvider = ({ children }) => {
 
     const queryUrlTvSeries = `${import.meta.env.VITE_BASE_API_TV_SERIES_URL}&query=${inputSearch}`
 
+
     const handleSearchSubmit = (e) => {
         e.preventDefault()
 
