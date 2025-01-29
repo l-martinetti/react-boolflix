@@ -1,7 +1,5 @@
 
-const Card = (props) => {
-
-    const { films, tvSeries } = props;
+const Card = ({ films }) => {
 
     const languageToCountry = {
         en: "GB",
@@ -15,58 +13,21 @@ const Card = (props) => {
         ru: "RU"
     };
 
+    const countryCode = languageToCountry[films.original_language.toLowerCase()] || "GB";
+
     return (
-        <>
-            {films.length > 0 && <h2>Films</h2>}
-            <div className="container card-wrapper">
-                {films.map(film => {
 
-                    const countryCode = languageToCountry[film.original_language.toLowerCase()] || "GB";
-
-                    return (
-                        <div key={film.id} className="card">
-                            <div>
-                                <h4>{film.title}</h4>
-                                <p>{film.original_title}</p>
-                                <img
-                                    src={`https://flagsapi.com/${countryCode}/flat/64.png`}
-                                    alt={film.original_language}
-                                />
-                                <p>{Math.round(film.vote_average)}</p>
-                            </div>
-                        </div>
-                    )
-
-                }
-                )}
+        <div className="card">
+            <div>
+                <h4>{films.title || films.name}</h4>
+                <p>{films.original_title || films.original_name}</p>
+                <img
+                    src={`https://flagsapi.com/${countryCode}/flat/64.png`}
+                    alt={films.original_language}
+                />
+                <p>Voto: {Math.round(films.vote_average)}</p>
             </div>
-
-
-            {tvSeries.length > 0 && <h2>Tv Series</h2>}
-            <div className="container card-wrapper">
-                {tvSeries.map(serie => {
-
-                    const countryCode = languageToCountry[serie.origin_country.join("").toLowerCase()] || "GB";
-
-                    return (
-                        <div key={serie.id} className="card">
-                            <div>
-                                <h4>{serie.name}</h4>
-                                <p>{serie.original_name}</p>
-                                <img
-                                    src={`https://flagsapi.com/${countryCode}/flat/64.png`}
-                                    alt={serie.original_language}
-                                />
-                                <p>{Math.round(serie.vote_average)}</p>
-                            </div>
-                        </div>
-                    )
-
-                }
-                )}
-            </div>
-
-        </>
+        </div>
     )
 }
 

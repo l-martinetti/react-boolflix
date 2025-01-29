@@ -1,6 +1,6 @@
 import { useGlobalContext } from "../contexts/GlobalContext"
 
-const SearchBar = () => {
+const Filters = () => {
 
     const { handleSearchSubmit, inputSearch, setInputSearch } = useGlobalContext();
 
@@ -19,4 +19,4 @@ const SearchBar = () => {
     )
 }
 
-export { SearchBar }
+export default Filters
