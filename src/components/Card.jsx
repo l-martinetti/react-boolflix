@@ -19,31 +19,36 @@ const Card = ({ films }) => {
 
     for (let i = 0; i < 5; i++) {
         if (i < Math.ceil(films.vote_average / 2)) {
-            voteStars.push(<MdOutlineStar />)
+            voteStars.push(<MdOutlineStar key={i} />)
         } else {
-            voteStars.push(<MdOutlineStarBorder />)
+            voteStars.push(<MdOutlineStarBorder key={i} />)
         }
     }
 
     return (
-
-        <div className="card">
-            <div>
-                <h4>{films.title || films.name}</h4>
+        <>
+            <div className="card">
                 <div className="poster">
                     <img src={films.poster_path
                         ? `https://image.tmdb.org/t/p/w342${films.poster_path}`
                         : "/placeholder.webp"}
                         alt={films.title || films.name} />
                 </div>
-                <p>{films.original_title || films.original_name}</p>
-                <img
-                    src={`https://flagsapi.com/${countryCode}/flat/64.png`}
-                    alt={films.original_language}
-                />
-                <p>Voto: {voteStars}</p>
+                <div className="card-content">
+                    <div>
+                        <h4>{films.title || films.name}</h4>
+                        <p>{films.original_title || films.original_name}</p>
+                        <img
+                            src={`https://flagsapi.com/${countryCode}/flat/64.png`}
+                            alt={films.original_language}
+                        />
+                        <p>Voto: {voteStars}</p>
+                    </div>
+                </div>
             </div>
-        </div>
+
+        </>
+
     )
 }
 
