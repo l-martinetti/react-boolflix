@@ -39,3 +39,11 @@ header h1 {
 .card {
     width: calc(100% / 6 - 20px);
 }
+
+.poster {
+    width: 100%;
+}
+
+.poster img {
+    width: 40%;
+}

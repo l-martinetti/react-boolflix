@@ -18,7 +18,7 @@ const Card = ({ films }) => {
     let voteStars = [];
 
     for (let i = 0; i < 5; i++) {
-        if (i < Math.round(films.vote_average / 2)) {
+        if (i < Math.ceil(films.vote_average / 2)) {
             voteStars.push(<MdOutlineStar />)
         } else {
             voteStars.push(<MdOutlineStarBorder />)
@@ -30,6 +30,12 @@ const Card = ({ films }) => {
         <div className="card">
             <div>
                 <h4>{films.title || films.name}</h4>
+                <div className="poster">
+                    <img src={films.poster_path
+                        ? `https://image.tmdb.org/t/p/w342${films.poster_path}`
+                        : "/placeholder.webp"}
+                        alt={films.title || films.name} />
+                </div>
                 <p>{films.original_title || films.original_name}</p>
                 <img
                     src={`https://flagsapi.com/${countryCode}/flat/64.png`}
